@@ -1,0 +1,179 @@
+@font-face {
+    font-family: "iranYekan";
+    src: url("../fonts/iranyekanwebregularfanum.eot");
+    src: url("../fonts/iranyekanwebregularfanum.ttf");
+    src: url("../fonts/iranyekanwebregularfanum.woff");
+    src: url("../fonts/iranyekanwebregularfanum.woff2");
+}
+
+
+body {
+    font-family: "iranYekan", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: rtl;
+    box-sizing: border-box;
+    background-color: #222222;
+    color: #fff;
+    font-size: 16px;
+}
+
+
+.btn {
+    border-radius: 5px;
+    background-color: #06BB00;
+    color: #fff;
+}
+.btn:hover {
+    background-color: #06bb00c2;
+    color: #fff;
+}
+.btn:active {
+    background-color: #06bb00c2;
+    color: #fff;
+}   
+.btn:visited {
+    background-color: #06bb00c2 !important;
+    color: #fff;
+} 
+a:hover {
+    color: #f2f2f2;
+    cursor: pointer;
+}
+a:active {
+    color: #f2f2f2;
+}
+a:visited {
+    color: #f2f2f2;
+}
+
+
+
+
+/* header */
+
+header {
+    border-bottom: 1px solid #423838;
+}
+
+.navbar-brand {
+    color: #06BB00 !important;
+    font-size: 28px;
+}
+
+.navbar-nav {
+    margin-right: 40px;
+}
+
+.navbar-nav li a {
+    color: #fff;
+    margin: 0px 5px;
+}
+.navbar-nav li a:hover {
+    color: #cfcfcf !important;
+}
+.navbar-nav li a:visited {
+    color: #f2f2f2;
+}
+
+/* header */
+
+
+/* hero */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/20493501.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.75);
+    margin-top: -100px;
+}
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 0px;
+    }
+    .hero h1{
+        font-size: 45px !important;
+        text-align: center;
+        line-height: 65px;
+    }
+    .hero .input-group {
+        width: 80% !important;
+    }
+    .best {
+        padding: 10px;
+    }
+    .best .card .col-md-5 {
+        padding: 40px;
+    }
+    .best .card .col-md-4 {
+        padding: 0px 40px 40px 40px;
+    }
+    .all-movies {
+        padding: 10px;
+    }
+    .all-movies .card .col-md-5 {
+        padding: 40px;
+    }
+    .all-movies .card .col-md-4 {
+        padding: 0px 40px 40px 40px;
+    }
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 75px;
+}
+
+.film-bank {
+    color: #06BB00;
+}
+
+.hero .input-group {
+    height: 50px;
+}
+
+input:focus, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+}
+
+/* best */
+
+.best {
+    margin-top: 100px;
+}
+
+.card {
+    background-color: #444444 !important;
+}
+
+.txt-up {
+    margin-bottom: 30px;
+}
+.card ul li {
+    background-color: #444444 !important;
+    color: white;
+    padding: 12px;
+}
+
+.sticky-top {
+    top: 20px;
+}
+
+/* footer */
+
+footer {
+    background-color: #161616;
+}
+
+footer ul li {
+    list-style: none;
+}
+
+.navbar-toggler img {
+    width: 25px;
+    height: 25px;
+}
