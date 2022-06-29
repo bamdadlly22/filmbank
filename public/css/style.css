@@ -177,3 +177,50 @@ footer ul li {
     width: 25px;
     height: 25px;
 }
+
+/* about us page  */
+
+.about-us h1 {
+    color: #06BB00;
+    margin-bottom: 30px;
+}
+.about-us p {
+    text-align: justify;
+    line-height: 30px;
+}
+
+.about-us .about-img {
+    height: 600px;
+    text-align: center;
+    border-radius: 15px !important;
+}
+
+
+/* movie page  */
+
+.movie-info .thumbnail {
+    height: 500px;
+    border-radius: 12px;
+}
+
+.movie-info h2 {
+    margin-bottom: 40px;
+}
+
+.list-group-item {
+    border-color: #423838;
+}
+
+.movie-info .list-group li {
+    background-color: transparent !important;
+    color: #f2f2f2;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}
+
+.movie-info .thumbnail-sub {
+    /* height: 500px; */
+    width: 300px !important;
+    border-radius: 12px;
+    margin: 40px 45px 0px 0px;
+}   

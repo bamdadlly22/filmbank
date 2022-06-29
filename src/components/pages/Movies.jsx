@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { getMovies } from "../../services/services";
+import { Link } from "react-router-dom";
 
 
 const Movies = () => {
@@ -16,8 +17,8 @@ const Movies = () => {
               <div className="row">
               {movies &&
                 movies.map((movie) => (
-                        <div className="col-md-6">
-                  <div key={movie.id} className="card mb-4">
+                  <div key={movie.id} className="col-md-6">
+                  <div className="card mb-4">
                     <div className="row align-items-center">
                       <div className="col-md-3">
                         <img
@@ -57,7 +58,7 @@ const Movies = () => {
                             }`}
                           </span>
                         </p>
-                        <button className="btn">مشاهده بیشتر</button>
+                        <Link to={`${movie.id}`} className="btn">مشاهده بیشتر</Link>
                       </div>
                     </div>
                   </div>
