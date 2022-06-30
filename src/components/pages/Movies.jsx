@@ -1,20 +1,41 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { getMovies } from "../../services/services";
-import { Link } from "react-router-dom";
+import { getMovies, searchMovies } from "../../services/services";
+import { Link, useSearchParams } from "react-router-dom";
 
 
 const Movies = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
     const [movies, setMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error , setError] = useState(false);
     useEffect(() => {
-        getMovies().then(data => setMovies(data.data)).catch(err => console.log(err));
+        // console.log(searchParams.get("q"));
+        if(searchParams.get("q")) {
+          let movieName = searchParams.get("q");
+          searchMovies(movieName).then(data => {setMovies(data.data); setLoading(false);}).catch(err => {setError(true); setLoading(false)}); 
+        } else {
+          getMovies().then(data => {setMovies(data.data); setLoading(false);}).catch(err => {setError(true); setLoading(false)});
+        }
     },[])
     return(
         <>
         <section className="all-movies mt-5">
         <div className="container">
-              <h1 className="mb-5">همه فیلم ها</h1>
+              {/* <h1 className="mb-5">همه فیلم ها</h1> */}
+              {searchParams.get("q")? <h1 className="mb-5">نتایج یافت شده : </h1> : <h1 className="mb-5">همه فیلم ها</h1>}
               <div className="row">
+              {loading && 
+              <div className="d-flex justify-content-center">
+                 <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>}
+              {error? 
+                (<div className="text-center text-danger">
+                  <h3 className="py-5">مشکلی پیش آمده است!</h3>
+                </div>) : null
+              }
               {movies &&
                 movies.map((movie) => (
                   <div key={movie.id} className="col-md-6">
@@ -68,7 +89,7 @@ const Movies = () => {
             </div>
       </section>
       <div className="text-center mt-5">
-        <button className="btn btn-lg">مشاهده بیشتر</button>
+        {/* <button className="btn btn-lg">مشاهده بیشتر</button> */}
       </div>
         </>
     );

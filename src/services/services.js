@@ -18,5 +18,14 @@ export const getMovie = async (id) => {
   } else {
       throw Error(response.err);
   }
+}
+
+export const searchMovies = async (movieName) => {
+  const response = await fetch(`https://moviesapi.ir/api/v1/movies?q=${movieName}`,{method:"GET"});
+  if(response.ok) {
+    return response.json();
+  } else {
+      throw Error(response.err);
+  }
 } 
 

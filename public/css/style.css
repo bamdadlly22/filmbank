@@ -15,6 +15,62 @@ body {
     color: #fff;
     font-size: 16px;
 }
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #222222;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #444;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #444;
+  }
+
+@media (max-width: 768px) {
+    .hero {
+        margin-top: 0px;
+    }
+    .hero h1{
+        font-size: 45px !important;
+        text-align: center;
+        line-height: 65px;
+    }
+    .hero .input-group {
+        width: 80% !important;
+    }
+    .best {
+        padding: 10px;
+    }
+    .best .card .col-md-5 {
+        padding: 40px;
+    }
+    .best .card .col-md-4 {
+        padding: 0px 40px 40px 40px;
+    }
+    .all-movies {
+        padding: 10px;
+    }
+    .all-movies .card .col-md-5 {
+        padding: 40px;
+    }
+    .all-movies .card .col-md-4 {
+        padding: 0px 40px 40px 40px;
+    }
+    .movie-info .container .col-md-5 {
+        margin-top: 40px;
+    }
+    .movie-info .thumbnail-sub {
+        margin: 40px 20px 0px 0px !important;
+    }
+}
 
 
 .btn {
@@ -89,37 +145,7 @@ header {
     box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.75);
     margin-top: -100px;
 }
-@media (max-width: 768px) {
-    .hero {
-        margin-top: 0px;
-    }
-    .hero h1{
-        font-size: 45px !important;
-        text-align: center;
-        line-height: 65px;
-    }
-    .hero .input-group {
-        width: 80% !important;
-    }
-    .best {
-        padding: 10px;
-    }
-    .best .card .col-md-5 {
-        padding: 40px;
-    }
-    .best .card .col-md-4 {
-        padding: 0px 40px 40px 40px;
-    }
-    .all-movies {
-        padding: 10px;
-    }
-    .all-movies .card .col-md-5 {
-        padding: 40px;
-    }
-    .all-movies .card .col-md-4 {
-        padding: 0px 40px 40px 40px;
-    }
-}
+
 
 .hero h1 {
     font-size: 60px;
@@ -138,6 +164,11 @@ header {
 input:focus, input.form-control:focus {
     outline:none !important;
     outline-width: 0 !important;
+}
+
+.bi-search {
+    padding: 5px;
+    font-size: 20px;
 }
 
 /* best */
@@ -161,6 +192,12 @@ input:focus, input.form-control:focus {
 
 .sticky-top {
     top: 20px;
+}
+
+.spinner-border {
+    width: 75px;
+    height: 75px;
+    color: #555;
 }
 
 /* footer */

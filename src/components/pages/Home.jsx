@@ -4,21 +4,25 @@ import { getMovies } from "../../services/services";
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error , setError] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
   useEffect(() => {
     getMovies()
       .then((m) => {
         setMovies(m.data);
+        setLoading(false);
       })
-      .catch((err) => alert(err));
-  }, []);
+      .catch((err) => {setError(true);
+        setLoading(false);});
+  }, []); 
   return (
     <>
       <section className="hero d-flex align-items-center">
         <div className="container">
           <div className="d-flex flex-column align-items-center justify-content-between">
             <h1>
-              <span className="film-bank"> فیلم بانک؛</span> بانک اطلاعاتی فیلم
-              ها
+              <span className="film-bank"> فیلم بانک؛</span> بانک اطلاعاتی فیلم و سریال ها
             </h1>
             <div className="input-group w-50">
               <input
@@ -27,10 +31,20 @@ const Home = () => {
                 placeholder="فیلم مورد نظر رو پیدا کن..."
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                onChange={e => setSearchValue(e.target.value)}
               />
+              {searchValue? <Link to={`/movies?q=${searchValue}`}>
               <span className="btn d-flex input-group-text" id="basic-addon1">
-                جستوجو
+              <i className="bi bi-search"></i>
               </span>
+              </Link> : <span className="btn d-flex input-group-text" id="basic-addon1">
+              <i className="bi bi-search"></i>
+              </span>}
+              {/* <Link to={`/movies?q=${searchValue}`}>
+              <span className="btn d-flex input-group-text" id="basic-addon1">
+              <i className="bi bi-search"></i>
+              </span>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -41,6 +55,17 @@ const Home = () => {
           <div className="row flex-md-nowrap">
             <div className="col-lg-8">
               <h2 className="mb-5">فیلم های برتر</h2>
+              {loading && 
+              <div className="d-flex justify-content-center">
+                 <div className="spinner-border" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>}
+              {error? 
+                (<div className="text-center text-danger">
+                  <h3 className="py-5">مشکلی پیش آمده است!</h3>
+                </div>) : null
+              }
               {movies &&
                 movies.map((movie) => (
                   <div key={movie.id} className="card mb-4">
@@ -93,11 +118,11 @@ const Home = () => {
               <h2 className="mb-5">آخرین فیلم ها</h2>
               <div className="card sticky-top">
                 <ul className="list-group list-group-flush">
-                  <li class="list-group-item">the titanic</li>
-                  <li class="list-group-item">spiderman 3</li>
-                  <li class="list-group-item">12 years slaves</li>
-                  <li class="list-group-item">hereditary</li>
-                  <li class="list-group-item">mr.Nobody</li>
+                  <li className="list-group-item">the titanic</li>
+                  <li className="list-group-item">spiderman 3</li>
+                  <li className="list-group-item">12 years slaves</li>
+                  <li className="list-group-item">hereditary</li>
+                  <li className="list-group-item">mr.Nobody</li>
                 </ul>
               </div>
             </div>

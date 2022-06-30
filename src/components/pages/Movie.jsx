@@ -10,7 +10,7 @@ const Movie = () => {
     const [movie, setMovie] = useState([]);
     const [rating, setRating] = useState(0);
     useEffect(() => {
-     getMovie(id).then(data => {setMovie(data); console.log(data)}).catch(err => console.log(err));   
+     getMovie(id).then(data => {setMovie(data); console.log(data)}).catch(err => console.log(err)); 
     },[])
     const handleRating = (rate) => {
         setRating(rate)
@@ -25,23 +25,23 @@ const Movie = () => {
                 </div>
                 <div className="col-md-5">
                     <h2>{movie.title}</h2>
-                    <ul class="list-group list-group-flush">
-                       <li class="list-group-item"><i class="bi bi-folder2-open me-2"></i><span>ژانر: </span>{movie.genres? movie.genres.map(genre => (genre + " ")) : null}</li>
-                       <li class="list-group-item"><img className="me-2 imdb" src="https://img.icons8.com/ios/50/06BB00/imdb.png"/><span>امتیاز: </span>{movie.imdb_rating}</li>
-                       <li class="list-group-item"><i class="bi bi-bar-chart-line me-2"></i><span>تعداد رای: </span>{movie.imdb_votes}</li>
-                       <li class="list-group-item"><i class="bi bi-person me-2"></i><span>کارگردان: </span>{movie.director}</li>
-                       <li class="list-group-item"><i class="bi bi-people me-2"></i><span>بازیگران: </span>{movie.actors}</li>
-                       <li class="list-group-item"><i class="bi bi-flag me-2"></i><span>کشور: </span>{movie.country}</li>
+                    <ul className="list-group list-group-flush">
+                       <li className="list-group-item"><i className="bi bi-folder2-open me-2"></i><span>ژانر: </span>{movie.genres? movie.genres.map(genre => (genre + " ")) : null}</li>
+                       <li className="list-group-item"><img className="me-2 imdb" src="https://img.icons8.com/ios/50/06BB00/imdb.png"/><span>امتیاز: </span>{movie.imdb_rating}</li>
+                       <li className="list-group-item"><i className="bi bi-bar-chart-line me-2"></i><span>تعداد رای: </span>{movie.imdb_votes}</li>
+                       <li className="list-group-item"><i className="bi bi-person me-2"></i><span>کارگردان: </span>{movie.director}</li>
+                       <li className="list-group-item"><i className="bi bi-people me-2"></i><span>بازیگران: </span>{movie.actors}</li>
+                       <li className="list-group-item"><i className="bi bi-flag me-2"></i><span>کشور: </span>{movie.country}</li>
                     </ul>
                 </div>
                 <div className="col-md-3">
                     <h2 className="like"><Rating onClick={handleRating} ratingValue={rating} /* Available Props */ /></h2>
-                <ul class="list-group list-group-flush">
-                       <li class="list-group-item"><i class="bi bi-calendar4 me-2"></i><span>سال ساخت: </span>{movie.year}</li>
-                       <li class="list-group-item"><i class="bi bi-dash-circle me-2"></i><span>رده سنی: </span>{movie.rated}</li>
-                       <li class="list-group-item"><i class="bi bi-calendar2-week me-2"></i><span>تاریخ انتشار: </span>{movie.released}</li>
-                       <li class="list-group-item"><i class="bi bi-clock me-2"></i><span>مدت زمان: </span>{movie.runtime}</li>
-                       <li class="list-group-item"><i class="bi bi-graph-up me-2"></i><span>امتیاز متا: </span>{movie.metascore}</li>
+                <ul className="list-group list-group-flush">
+                       <li className="list-group-item"><i className="bi bi-calendar4 me-2"></i><span>سال ساخت: </span>{movie.year}</li>
+                       <li className="list-group-item"><i className="bi bi-dash-circle me-2"></i><span>رده سنی: </span>{movie.rated}</li>
+                       <li className="list-group-item"><i className="bi bi-calendar2-week me-2"></i><span>تاریخ انتشار: </span>{movie.released}</li>
+                       <li className="list-group-item"><i className="bi bi-clock me-2"></i><span>مدت زمان: </span>{movie.runtime}</li>
+                       <li className="list-group-item"><i className="bi bi-graph-up me-2"></i><span>امتیاز متا: </span>{movie.metascore}</li>
                     </ul>
                 </div>
             </div>
