@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import img from "../../images/menu.png";
 
 const Header = () => {
@@ -6,9 +6,9 @@ const Header = () => {
     <header className="py-2">
       <nav className="navbar navbar-expand-lg bg-transparent bg-light">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             FilmBank
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"

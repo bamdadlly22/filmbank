@@ -218,9 +218,25 @@ footer ul li {
     padding-bottom: 15px;
 }
 
+.movie-info .list-group li i {
+    color: #06BB00;
+}
+
+.movie-info .list-group li .imdb {
+    width: 25px;
+}
+
+.movie-info .list-group li span {
+    font-weight: bold;
+}
+
 .movie-info .thumbnail-sub {
     /* height: 500px; */
     width: 300px !important;
     border-radius: 12px;
     margin: 40px 45px 0px 0px;
-}   
+}
+
+.movie-info .like {
+    cursor: pointer;
+}

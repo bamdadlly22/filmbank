@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getMovies } from "../../services/services";
 
 const Home = () => {
@@ -82,7 +83,7 @@ const Home = () => {
                             }`}
                           </span>
                         </p>
-                        <button className="btn">مشاهده بیشتر</button>
+                        <Link to={`/movies/${movie.id}`} className="btn">مشاهده بیشتر</Link>
                       </div>
                     </div>
                   </div>
