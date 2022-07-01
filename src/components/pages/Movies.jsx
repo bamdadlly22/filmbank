@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { getMovies, searchMovies } from "../../services/services";
-import { Link, useSearchParams } from "react-router-dom";
+import { getMovies, paginateMovies, searchMovies } from "../../services/services";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import ReactPaginate from 'react-paginate';
+
+
 
 
 const Movies = () => {
@@ -9,7 +12,10 @@ const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error , setError] = useState(false);
+
+
     useEffect(() => {
+
         // console.log(searchParams.get("q"));
         if(searchParams.get("q")) {
           let movieName = searchParams.get("q");
@@ -17,12 +23,15 @@ const Movies = () => {
         } else {
           getMovies().then(data => {setMovies(data.data); setLoading(false);}).catch(err => {setError(true); setLoading(false)});
         }
-    },[])
+    },[searchParams.get("q")])
+    const handlePageClick = (e) => {
+      setLoading(true);
+      paginateMovies(e.selected + 1).then(data => {setMovies(data.data); setLoading(false);}).catch(err => {setError(true); setLoading(false)});
+    }
     return(
         <>
         <section className="all-movies mt-5">
         <div className="container">
-              {/* <h1 className="mb-5">همه فیلم ها</h1> */}
               {searchParams.get("q")? <h1 className="mb-5">نتایج یافت شده : </h1> : <h1 className="mb-5">همه فیلم ها</h1>}
               <div className="row">
               {loading && 
@@ -86,6 +95,18 @@ const Movies = () => {
                 </div>
                 ))}
                 </div>
+                {searchParams.get("q") === null? (                
+                <div className="paginate">
+                <ReactPaginate
+                    breakLabel="..."
+                    nextLabel="بعدی >"
+                    onPageChange={handlePageClick}
+                    pageRangeDisplayed={2}
+                    pageCount={25}
+                    previousLabel="< قبلی"
+                    renderOnZeroPageCount={null}
+                 />
+                </div>) : null }
             </div>
       </section>
       <div className="text-center mt-5">

@@ -29,3 +29,12 @@ export const searchMovies = async (movieName) => {
   }
 } 
 
+export const paginateMovies = async (moviePage) => {
+  const response = await fetch(`https://moviesapi.ir/api/v1/movies?page=${moviePage}`,{method:"GET"});
+  if(response.ok) {
+    return response.json();
+  } else {
+      throw Error(response.err);
+  }
+} 
+
