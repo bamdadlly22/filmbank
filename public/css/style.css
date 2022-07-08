@@ -70,6 +70,20 @@ body {
     .movie-info .thumbnail-sub {
         margin: 40px 20px 0px 0px !important;
     }
+    .not-found {
+        overflow: hidden;
+    }
+    .not-found .container h1 {
+        font-size: 200px !important;
+    }
+
+    .not-found .container h3 {
+        top: 200px !important;
+    }
+
+    .not-found .container .btn {
+        margin-top: 50px !important;
+    }
 }
 
 
@@ -311,3 +325,77 @@ footer ul li {
 .movie-info .like {
     cursor: pointer;
 }
+
+
+/* not found page  */
+
+.not-found {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.not-found .container {
+    position: relative;
+    text-align: center;
+}
+
+.not-found .container h1 {
+    text-align: center;
+    font-size: 500px;
+    color: #444;
+}
+
+.not-found .container h3 {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%);
+}
+
+.not-found .container .btn {
+    margin-top: -200px;
+}
+
+/* login register  */
+
+.login-reister {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/46-465731_streaming-movies.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow:inset 0 0 0 2000px rgba(0, 0, 0, 0.75);
+    margin-top: -100px;
+    margin-bottom: -100px;
+    display: flex;
+    align-items: center;
+}
+
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 75px;
+}
+/* 
+.film-bank {
+    color: #06BB00;
+} */
+
+.login-reister input {
+    height: 50px;
+    opacity: 0.8;
+}
+
+/* input:focus, input.form-control:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+}
+
+.bi-search {
+    padding: 5px;
+    font-size: 20px;
+} */

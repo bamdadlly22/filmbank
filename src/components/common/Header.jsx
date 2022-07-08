@@ -38,9 +38,9 @@ const Header = () => {
                 </NavLink>
               </li>
             </ul>
-            <button className="btn" type="button">
+            <Link to="/login-register" className="btn">
               ثبت نام / ورود
-            </button>
+            </Link>
           </div>
         </div>
       </nav>

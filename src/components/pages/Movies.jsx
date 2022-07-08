@@ -15,7 +15,6 @@ const Movies = () => {
 
 
     useEffect(() => {
-
         // console.log(searchParams.get("q"));
         if(searchParams.get("q")) {
           let movieName = searchParams.get("q");
