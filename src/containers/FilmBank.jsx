@@ -2,7 +2,7 @@ import { Route, Router, Routes } from "react-router";
 import MainLayout from "../components/layout/MainLayout";
 import AboutUs from "../components/pages/AboutUs";
 import Home from "../components/pages/Home";
-import LoginRegister from "../components/pages/LoginRegister";
+import LoginRegister from "../context/LoginRegister";
 import Movie from "../components/pages/Movie";
 import Movies from "../components/pages/Movies";
 import NotFound from "../components/pages/NotFound";

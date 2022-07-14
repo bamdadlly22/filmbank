@@ -233,6 +233,11 @@ footer ul li {
     list-style: none;
 }
 
+footer ul li a{
+    text-decoration: none !important;
+}
+
+
 .navbar-toggler img {
     width: 25px;
     height: 25px;
@@ -389,25 +394,13 @@ footer ul li {
     font-weight: bold;
     margin-bottom: 75px;
 }
-/* 
-.film-bank {
-    color: #06BB00;
-} */
+
 
 .login-reister input {
     height: 50px;
     opacity: 0.8;
 }
 
-/* input:focus, input.form-control:focus {
-    outline:none !important;
-    outline-width: 0 !important;
-}
-
-.bi-search {
-    padding: 5px;
-    font-size: 20px;
-} */
 
 .Toastify__toast-body div {
     font-family: "iranYekan" !important;
