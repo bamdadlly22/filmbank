@@ -84,6 +84,15 @@ body {
     .not-found .container .btn {
         margin-top: 50px !important;
     }
+    .login-reister {
+        height: fit-content !important;
+        /* padding-top: 200px !important; */
+        padding: 50px 0px 100px 0px;
+        margin-top: 0px !important;
+    }
+    .login-reister .register {
+        margin-top: 75px !important;
+    }
 }
 
 
@@ -399,3 +408,9 @@ footer ul li {
     padding: 5px;
     font-size: 20px;
 } */
+
+.Toastify__toast-body div {
+    font-family: "iranYekan" !important;
+    direction: rtl;
+    font-size: 14px;
+}

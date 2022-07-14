@@ -14,7 +14,6 @@ const Movie = () => {
     },[])
     const handleRating = (rate) => {
         setRating(rate)
-        // other logic
       }
     return (<>
     <section className="movie-info my-5 py-5">
