@@ -22,7 +22,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="col-md-6">
-              <p className="text-end">all rights reserved to FilmBank</p>
+              <p className="text-end">all rights reserved to filmographic</p>
             </div>
           </div>
         </div>

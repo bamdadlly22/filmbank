@@ -7,7 +7,7 @@ const Header = () => {
       <nav className="navbar navbar-expand-lg bg-transparent bg-light">
         <div className="container">
           <Link className="navbar-brand" to="/">
-            FilmBank
+            filmographic
           </Link>
           <button
             className="navbar-toggler"

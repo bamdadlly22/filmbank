@@ -22,7 +22,7 @@ const Home = () => {
         <div className="container">
           <div className="d-flex flex-column align-items-center justify-content-between">
             <h1>
-              <span className="film-bank"> فیلم بانک؛</span> بانک اطلاعاتی فیلم و سریال ها
+              <span className="film-bank"> فیلموگرافیک؛</span> بانک اطلاعاتی فیلم و سریال ها
             </h1>
             <div className="input-group w-50">
               <input
